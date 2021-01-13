@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
 
+## Deploy
+
+Run `ng deploy --base-href="/prueba/` to deploy to Giyhub Pages. Navigate to `https://guillermobelcic.github.io/prueba/`.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
