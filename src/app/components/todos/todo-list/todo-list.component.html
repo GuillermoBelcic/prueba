@@ -1,0 +1,12 @@
+<div class="todo-list"
+*ngIf="todoList.length > 0">
+	<div class="todo-item"
+	*ngFor="let todo of todoList">
+		<div class="todo-name">
+			{{ todo.name }}
+		</div>
+		<div class="todo-description">
+			{{ todo.description }}
+		</div>
+	</div>	  
+</div>

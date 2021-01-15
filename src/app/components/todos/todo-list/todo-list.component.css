@@ -1,0 +1,30 @@
+.todo-list {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 1rem;
+	width: 100%;
+}
+
+.todo-item {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin: .5rem;
+	width: 100%
+}
+
+.todo-name {
+	font-weight: bold;
+}
+
+.todo-description {
+	font-size: .8rem;
+	color: rgb(83, 82, 82);
+	margin-left: 2rem;
+}

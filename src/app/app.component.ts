@@ -11,10 +11,10 @@ export class AppComponent {
   name = 'Nombre Prueba';
   myUsers: {name: string; email: string; password: string}[] = [];
 
-  constructor($apiService: ApiService) {
-    $apiService.getUsers()
-      .subscribe((users: any[]) => {
-        this.myUsers = users;
-      });
+  constructor(private $apiService: ApiService) {
+    // this.$apiService.getUsers()
+    //   .subscribe((users: any[]) => {
+    //     this.myUsers = users;
+    //   });
   }
 }
