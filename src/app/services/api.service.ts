@@ -3,11 +3,13 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import {Observable} from 'rxjs';
 import { Expense } from '../models/expense.model';
+import { ToDoItem } from '../models/todoItem.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
+
   private apiURL: string;
 
   constructor(private httpClient: HttpClient) {
@@ -30,5 +32,9 @@ export class ApiService {
 //   ToDoList
   public getTodoList(): Observable<any> {
 	  return this.httpClient.get(this.apiURL + '/todo');
+  }
+
+  public createToDo(todo: ToDoItem): Observable<any> {
+    return this.httpClient.post(this.apiURL + '/todo', todo.toRemote());
   }
 }

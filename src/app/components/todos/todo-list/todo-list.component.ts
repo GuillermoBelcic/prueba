@@ -11,13 +11,13 @@ import { ApiService } from 'src/app/services/api.service';
 export class TodoListComponent implements OnInit {
   todoList: ToDoItem[] = [];
 
-  constructor(private $apiService: ApiService) {}
+  constructor(private $apiService: ApiService) { }
 
   ngOnInit(): void {
     this.$apiService.getTodoList().subscribe((res: IToDoItem[]) => {
-	  res.forEach((res: IToDoItem) => {
-		this.todoList.push(res);
-	  });
+      res.forEach((res: IToDoItem) => {
+        this.todoList.push(ToDoItem.fromRemote(res));
+      });
     });
   }
 }
