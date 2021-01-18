@@ -1,20 +1,22 @@
 <form #myForm="ngForm"
 (ngSubmit)="onsubmit(myForm)">
-<div class="row">
-    <div class="col">
-        <div class="form-floating">
-            <input ngModel type="text" class="form-control" name="tarea" id="tarea" placeholder="Tarea" aria-label="Tarea">
-            <label for="tarea">Tarea</label>
-        </div>
-    </div>
-    <div class="col">
-        <div class="form-floating">
-            <input ngModel type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion" aria-label="Descripcion">
-            <label for="description">Descripción</label>
-        </div>
-    </div>
-    <div class="col-1">
-        <button type="submit" class="btn btn-primary">Guardar</button>
-      </div>
-  </div>
+<div class="container">
+	<div class="row">
+		<div class="col-12 col-sm-4 mb-1 mb-sm-0">
+			<div class="form-floating">
+				<input ngModel type="text" class="form-control" name="tarea" id="tarea" placeholder="Tarea" aria-label="Tarea">
+				<label for="tarea">Tarea</label>
+			</div>
+		</div>
+		<div class="col-12 col-sm-6 mb-1 mb-sm-0">
+			<div class="form-floating">
+				<input ngModel type="text" class="form-control" name="descripcion" id="descripcion" placeholder="Descripcion" aria-label="Descripcion">
+				<label for="description">Descripción</label>
+			</div>
+		</div>
+		<div class="col-12 col-sm-1 d-flex justify-content-center justify-content-sm-end">
+			<button type="submit" class="btn btn-primary mx-auto">Guardar</button>
+		</div>
+	</div>
+</div>
 </form>

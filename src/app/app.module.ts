@@ -16,6 +16,8 @@ import { faCircle as farCircle, faSquare as farSquare, faListAlt } from '@fortaw
 import { faStackOverflow, faGithub, faMedium } from '@fortawesome/free-brands-svg-icons';
 import { TodoListComponent } from './components/todos/todo-list/todo-list.component';
 import { CreateTodoComponent } from './components/todos/create-todo/create-todo.component';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { MenuComponent } from './components/layout/menu/menu.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { CreateTodoComponent } from './components/todos/create-todo/create-todo.
 	GetExpenseAllComponent,
 	CreateExpenseComponent,
 	TodoListComponent,
-	CreateTodoComponent
+	CreateTodoComponent,
+	HeaderComponent,
+	MenuComponent
   ],
   imports: [
 	BrowserModule,
