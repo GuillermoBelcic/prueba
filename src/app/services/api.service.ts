@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import {Observable} from 'rxjs';
+import { Observable, pipe} from 'rxjs';
+import { map, take } from 'rxjs/operators';
 import { Expense } from '../models/expense.model';
-import { ToDoItem } from '../models/todoItem.model';
+import { ToDoItem } from '../models/TodoItem.model';
+import { IToDoItem } from '../models/IToDoItem.Interface';
+import { IRemoteTodoList } from '../models/IRemoteTodoList.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -30,8 +33,12 @@ export class ApiService {
   }
 
 //   ToDoList
-  public getTodoList(): Observable<any> {
-	  return this.httpClient.get(this.apiURL + '/todo');
+  public getTodoList(): Observable<ToDoItem[]> {
+	  return this.httpClient.get(this.apiURL + '/todo')
+	  	.pipe(take(1))
+	  	.pipe(
+			map((response: IRemoteTodoList) => response.docs.map((response: IToDoItem) => ToDoItem.fromRemote(response)))
+		);
   }
 
   public createToDo(todo: ToDoItem): Observable<any> {

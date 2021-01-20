@@ -1,0 +1,9 @@
+.todo-name {
+	font-weight: bold;
+}
+
+.todo-description {
+	font-size: .8rem;
+	color: rgb(83, 82, 82);
+	margin-left: .25rem;
+}

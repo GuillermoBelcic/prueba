@@ -1,4 +1,4 @@
-import { IToDoItem } from './ToDoItem.Interface';
+import { IToDoItem } from './IToDoItem.Interface';
 
 export class ToDoItem implements IToDoItem {
 

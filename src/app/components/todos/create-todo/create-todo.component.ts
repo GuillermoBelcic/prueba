@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToDoItem } from 'src/app/models/todoItem.model';
+import { ToDoItem } from 'src/app/models/TodoItem.model';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({

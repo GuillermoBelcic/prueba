@@ -18,6 +18,7 @@ import { TodoListComponent } from './components/todos/todo-list/todo-list.compon
 import { CreateTodoComponent } from './components/todos/create-todo/create-todo.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { MenuComponent } from './components/layout/menu/menu.component';
+import { TodoListItemComponent } from './components/todos/todo-list-item/todo-list-item.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { MenuComponent } from './components/layout/menu/menu.component';
 	TodoListComponent,
 	CreateTodoComponent,
 	HeaderComponent,
-	MenuComponent
+	MenuComponent,
+	TodoListItemComponent
   ],
   imports: [
 	BrowserModule,

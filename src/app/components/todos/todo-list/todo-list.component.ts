@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IToDoItem } from 'src/app/models/ToDoItem.Interface';
-import { ToDoItem } from 'src/app/models/todoItem.model';
+import { IToDoItem } from 'src/app/models/IToDoItem.Interface';
+import { ToDoItem } from 'src/app/models/TodoItem.model';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -14,10 +14,10 @@ export class TodoListComponent implements OnInit {
   constructor(private $apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.$apiService.getTodoList().subscribe((res: IToDoItem[]) => {
-      res.forEach((res: IToDoItem) => {
-        this.todoList.push(ToDoItem.fromRemote(res));
-      });
+	this.$apiService.getTodoList()
+	.subscribe((remoteTodoList: ToDoItem[]) => {
+		this.todoList = remoteTodoList;
+		// console.log(this.todoList)
     });
   }
 }
