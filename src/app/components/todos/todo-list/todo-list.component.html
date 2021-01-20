@@ -1,6 +1,11 @@
+<div class="loading-spinner"
+*ngIf="loading"
+>
+	<img src="./../assets//icons//spinner.svg" />
+</div>
 <div class="todo-list"
-*ngIf="todoList.length > 0">
-	<app-todo-list-item class="todo-item"
+*ngIf="todoList.length > 0 && !loading">
+	<app-todo-list-item
 	*ngFor="let todo of todoList"
 	[todoItem]="todo"
 	></app-todo-list-item>	  

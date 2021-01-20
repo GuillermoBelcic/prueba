@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ToDoItem } from 'src/app/models/TodoItem.model';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-todo-list-item',
@@ -10,10 +11,20 @@ export class TodoListItemComponent implements OnInit {
 
 	@Input() todoItem: ToDoItem;
 
-  constructor() { }
+  constructor(private $apiService: ApiService) { }
 
   ngOnInit(): void {
 	//   console.log(this.todoItem)
+  }
+
+  deleteTodo() {
+	  console.log('delete:', this.todoItem)
+		this.$apiService.deleteToDo(this.todoItem)
+		.subscribe((response) => {
+			if (!!response && !!response.success) {
+				console.log(response);
+			}
+		});
   }
 
 }

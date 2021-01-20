@@ -44,4 +44,8 @@ export class ApiService {
   public createToDo(todo: ToDoItem): Observable<any> {
     return this.httpClient.post(this.apiURL + '/todo', todo.toRemote());
   }
+
+  public deleteToDo(todo: ToDoItem): Observable<any> {
+	  return this.httpClient.delete(this.apiURL + '/todo/' + todo._id);
+  }
 }

@@ -1,2 +1,20 @@
+* {
+	display: block;
+	margin: 0;;
+	padding: 0;
+}
 
+body {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+app-todo-list {
+	display: block;
+	margin: 0;;
+	padding: 0;
+}
 
+app-create-todo {
+	margin-bottom: 1rem;
+}

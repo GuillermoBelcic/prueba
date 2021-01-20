@@ -1,0 +1,9 @@
+header {
+	margin-bottom: 1rem;
+}
+
+.custom-todo-title {
+	color: white;
+	text-align: center;
+	width: 100%;
+}
