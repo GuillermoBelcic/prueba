@@ -15,8 +15,7 @@ export class CreateTodoComponent implements OnInit {
   }
 
   onsubmit(myForm) {
-    console.log(myForm.value)
-    const myNewToDo = new ToDoItem(null, myForm.value.tarea, myForm.value.description, null, null);
+	const myNewToDo = new ToDoItem(null, myForm.value.tarea, myForm.value.descripcion, null, null);
     this.$apiService.createToDo(myNewToDo)
     .subscribe(response => console.log(response));
 

@@ -22,10 +22,10 @@ export class ToDoItem implements IToDoItem {
 
 	toRemote() {
 		return {
+			name: this.name,
 			description: this.description,
 			finished: this.finished,
-			finishedAt: this.finishedAt,
-			name: this.name
+			finishedAt: this.finishedAt
 		};
 	}
 }
