@@ -23,4 +23,14 @@ export class TodoListComponent implements OnInit {
 		// console.log(this.todoList)
     });
   }
+
+  deleteToDoItem(toDoItemId: string) {
+	  const indexToDelete = this.todoList.findIndex((todoItem: ToDoItem) => todoItem._id === toDoItemId);
+
+	  if (indexToDelete === -1) {
+		  return;
+	  }
+
+	  this.todoList.splice(indexToDelete, 1);
+  }
 }

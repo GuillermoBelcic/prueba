@@ -48,4 +48,8 @@ export class ApiService {
   public deleteToDo(todo: ToDoItem): Observable<any> {
 	  return this.httpClient.delete(this.apiURL + '/todo/' + todo._id);
   }
+
+  public finishToDo(todo: ToDoItem): Observable<any> {
+	  return this.httpClient.put(this.apiURL + '/todo/' + todo._id, todo.toRemote());
+  }
 }

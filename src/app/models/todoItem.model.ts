@@ -20,6 +20,11 @@ export class ToDoItem implements IToDoItem {
 		);
 	};
 
+	finish() {
+		this.finished = true;
+		this.finishedAt = (new Date()).toISOString;
+	}
+
 	toRemote() {
 		return {
 			name: this.name,
