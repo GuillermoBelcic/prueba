@@ -1,15 +1,21 @@
-<div class="todo-item">
+<div class="todo-item"
+[ngClass]="{'done': !!todoItem.finished}"
+>
 	<div class="content">
-		<div class="todo-name">
-			{{ todoItem.name }}
+		<div class="todo-name"
+			[ngClass]="{'done': !!todoItem.finished}"
+		>
+			{{ index }} - {{ todoItem.name }}
 		</div>
-		<div class="todo-description">
+		<div class="todo-description"
+			[ngClass]="{'done': !!todoItem.finished}"
+		>
 			{{ todoItem.description }}
 		</div>
 	</div>
 	<div class="actions">
 		<div class="action"
-		(click)="finishToDo()"
+		(click)="toggleFinishToDo()"
 		>
 			<svg *ngIf="!todoItem.finished"
 			xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-square" viewBox="0 0 16 16">

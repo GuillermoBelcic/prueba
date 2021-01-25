@@ -10,14 +10,26 @@
 	width: 100%
 }
 
+.todo-item.done {
+	background-color: lightgreen;
+}
+
 .todo-name {
 	font-weight: bold;
+}
+
+.todo-name.done {
+	text-decoration:line-through;
 }
 
 .todo-description {
 	font-size: .8rem;
 	color: rgb(83, 82, 82);
 	margin-left: .25rem;
+}
+
+.todo-description.done {
+	text-decoration:line-through;
 }
 
 .actions {

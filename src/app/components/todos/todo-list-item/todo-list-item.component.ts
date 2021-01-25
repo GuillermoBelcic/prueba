@@ -9,12 +9,16 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class TodoListItemComponent implements OnInit {
   @Input() todoItem: ToDoItem;
+  @Input() index: boolean;
   @Output() todoItemDeleted = new EventEmitter<string>();
+  @Output() todoItemToggleFinished = new EventEmitter<string>();
 
+  isDone: boolean = false;
   constructor(private $apiService: ApiService) {}
 
   ngOnInit(): void {
     //   console.log(this.todoItem)
+    // console.log(this.index)
   }
 
   deleteTodo() {
@@ -27,12 +31,13 @@ export class TodoListItemComponent implements OnInit {
     });
   }
 
-  finishToDo() {
-    this.todoItem.finish();
-    console.log('finish', this.todoItem);
+  toggleFinishToDo() {
+    this.todoItem.toggleFinish();
+    // console.log('toggle finish', this.todoItem);
     this.$apiService.finishToDo(this.todoItem).subscribe((response) => {
       if (!!response && !!response.success) {
         console.log(response);
+        this.todoItemToggleFinished.emit(this.todoItem._id);
       }
     });
   }

@@ -20,9 +20,9 @@ export class ToDoItem implements IToDoItem {
 		);
 	};
 
-	finish() {
-		this.finished = true;
-		this.finishedAt = (new Date()).toISOString;
+	toggleFinish() {
+		this.finished = !this.finished;
+		this.finishedAt = !this.finishedAt ? (new Date()).toISOString : null;
 	}
 
 	toRemote() {

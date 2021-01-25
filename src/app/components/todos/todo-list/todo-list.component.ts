@@ -18,10 +18,20 @@ export class TodoListComponent implements OnInit {
 	  this.loading = true;
 	this.$apiService.getTodoList()
 	.subscribe((remoteTodoList: ToDoItem[]) => {
-		this.todoList = remoteTodoList;
+    
+		this.todoList = this.reorderTodoList(remoteTodoList);
 		this.loading = false;
 		// console.log(this.todoList)
     });
+  }
+
+  private reorderTodoList(remoteList: ToDoItem[]) {
+    let returnList: ToDoItem[] = [];
+    const unfinishedTodos: ToDoItem[] = remoteList.filter((todoItem: ToDoItem) => !todoItem.finished);
+    const finishedTodos: ToDoItem[] = remoteList.filter((todoItem: ToDoItem) => !!todoItem.finished);
+    returnList.push(...unfinishedTodos, ...finishedTodos);
+    // console.log('finished', finishedTodos)
+    return returnList;
   }
 
   deleteToDoItem(toDoItemId: string) {
@@ -32,5 +42,22 @@ export class TodoListComponent implements OnInit {
 	  }
 
 	  this.todoList.splice(indexToDelete, 1);
+  }
+
+  toggleFinishToDo(toDoItemId: string) {
+    const indexToFinish = this.todoList.findIndex((todoItem: ToDoItem) => todoItem._id === toDoItemId);
+
+	  if (indexToFinish === -1) {
+		  return;
+	  }
+
+    const finishedItem = this.todoList.splice(indexToFinish, 1)[0];
+
+    if (!!finishedItem.finished) {
+      this.todoList.push(finishedItem);
+    } else {
+      this.todoList.unshift(finishedItem);
+    }
+    
   }
 }

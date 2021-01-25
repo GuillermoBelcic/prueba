@@ -6,8 +6,10 @@
 <div class="todo-list"
 *ngIf="todoList.length > 0 && !loading">
 	<app-todo-list-item
-	*ngFor="let todo of todoList"
+	*ngFor="let todo of todoList; index as i"
+	[index]=i+1
 	[todoItem]="todo"
 	(todoItemDeleted)="deleteToDoItem($event)"
+	(todoItemToggleFinished)="toggleFinishToDo($event)"
 	></app-todo-list-item>	  
 </div>
