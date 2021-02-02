@@ -12,7 +12,7 @@ import { GetExpenseAllComponent } from './components/get-expense-all/get-expense
 import { CreateExpenseComponent } from './components/create-expense/create-expense.component';
 
 import { faCircle, faSquare } from '@fortawesome/free-solid-svg-icons';
-import { faCircle as farCircle, faSquare as farSquare, faListAlt } from '@fortawesome/free-regular-svg-icons';
+import { faCircle as farCircle, faSquare as farSquare, faListAlt, faChartBar } from '@fortawesome/free-regular-svg-icons';
 import { faStackOverflow, faGithub, faMedium } from '@fortawesome/free-brands-svg-icons';
 import { TodoListComponent } from './components/todos/todo-list/todo-list.component';
 import { CreateTodoComponent } from './components/todos/create-todo/create-todo.component';
