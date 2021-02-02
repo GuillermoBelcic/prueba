@@ -19,6 +19,8 @@ import { CreateTodoComponent } from './components/todos/create-todo/create-todo.
 import { HeaderComponent } from './components/layout/header/header.component';
 import { MenuComponent } from './components/layout/menu/menu.component';
 import { TodoListItemComponent } from './components/todos/todo-list-item/todo-list-item.component';
+import { RouterModule } from '@angular/router';
+import { TodoComponent } from './components/todos/todo/todo.component';
 
 
 @NgModule({
@@ -31,13 +33,19 @@ import { TodoListItemComponent } from './components/todos/todo-list-item/todo-li
 	CreateTodoComponent,
 	HeaderComponent,
 	MenuComponent,
-	TodoListItemComponent
+	TodoListItemComponent,
+	TodoComponent
   ],
   imports: [
 	BrowserModule,
 	FormsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RouterModule.forRoot([
+      { path: '', component: AppComponent },
+      { path: 'calc', component: GetExpenseAllComponent },
+      { path: 'todo', component: TodoComponent },
+    ])
   ],
   providers: [
     ApiService
